@@ -1,23 +1,88 @@
 aid: arcadian-infracom
+
 name: Arcadian Infracom
-description: 'Arcadian Infracom is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+
+description: Arcadian Infracom, founded in 2018 and headquartered in St. Louis, Missouri, builds diverse, long‑haul fiber routes to bridge the
+  digital divide. The company develops, constructs, and operates information infrastructure, connecting major data centers and providing low‑cost
+  backhaul to rural and tribal communities across the United States. Its mission is to lay the foundation for next‑generation digital services,
+  supporting hyperscalers, content providers, and underserved regions.
+
 url: https://raw.githubusercontent.com/api-evangelist/arcadian-infracom/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-25'
+
 modified: '2026-09-25'
+
 tags:
-- Company
-apis: []
+- Infrastructure
+- Fiber
+- Broadband
+- Rural Connectivity
+- St. Louis
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/arcadian-infracom-hosts.yml
+- type: Vendors
+  url: vendors/arcadian-infracom-vendors.yml
+- type: DomainSecurity
+  url: security/arcadian-infracom-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://arcadianinfra.com/
+- type: Documentation
+  url: https://arcadianinfra.com/about/
+- type: Projects
+  url: https://arcadianinfra.com/projects/
+- type: Contact
+  url: https://arcadianinfra.com/contact/
+- type: PrivacyPolicy
+  url: https://arcadianinfra.com/privacy-policy/
+- type: TermsOfService
+  url: https://arcadianinfra.com/terms-and-conditions/
+
+apis:
+- name: Arcadian Infracom API
+  description: Arcadian Infracom | Who We Are
+  humanURL: https://arcadianinfra.com/about/
+  baseURL: null
+  x-coverage:
+    state: unreadable
+    reason: js-rendered-docs
+    detail: Documentation pages require JavaScript challenge (Cloudflare) preventing machine reading.
+    evidence:
+    - url: https://arcadianinfra.com/docs
+      status: 429
+    checked: 2026-09-25
+  aid: arcadian-infracom:arcadian-infracom-api
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  method: derived
+  generated: '2026-09-25'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: the company publishes developer documentation but serves no machine-readable contract from it
+  evidence:
+  - url: https://www.nasdaqprivatemarket.com/
+    status: 200
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
